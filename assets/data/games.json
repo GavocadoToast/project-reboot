@@ -1,0 +1,18 @@
+[
+  {
+    "id": "snake",
+    "title": "Neon Snake",
+    "category": "Arcade",
+    "icon": "gamepad-2",
+    "description": "Classic arcade snake with responsive grid controls.",
+    "path": "games/snake/index.html"
+  },
+  {
+    "id": "2048",
+    "title": "2048 Orbit",
+    "category": "Puzzle",
+    "icon": "grid",
+    "description": "Combine matching numbers to reach the 2048 tile.",
+    "path": "games/2048/index.html"
+  }
+]
