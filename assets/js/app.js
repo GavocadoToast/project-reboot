@@ -49,3 +49,57 @@ document.getElementById('authModal').addEventListener('click', function(e) {
         closeAuthModal();
     }
 });
+// Game Catalog Data
+const gamesCatalog = [
+    {
+        id: "snake",
+        title: "Neon Snake",
+        category: "Arcade",
+        icon: "gamepad-2",
+        description: "Classic snake with responsive controls and high score tracking.",
+        path: "games/snake/index.html"
+    },
+    {
+        id: "2048",
+        title: "2048 Orbit",
+        category: "Puzzle",
+        icon: "grid",
+        description: "Join the numbers and get to the 2048 tile!",
+        path: "games/2048/index.html"
+    }
+];
+
+// Render Game Cards Dynamically
+function renderGameGrid() {
+    const grid = document.querySelector('.game-grid');
+    if (!grid) return;
+
+    grid.innerHTML = gamesCatalog.map(game => `
+        <div class="game-card" onclick="launchGame('${game.id}')">
+            <div class="card-image-placeholder">
+                <i data-lucide="${game.icon}"></i>
+            </div>
+            <div class="card-content">
+                <span class="game-tag">${game.category}</span>
+                <h3>${game.title}</h3>
+                <p>${game.description}</p>
+            </div>
+        </div>
+    `).join('');
+
+    // Re-initialize Lucide icons for dynamically created cards
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+}
+
+// Placeholder for game launcher (Step 4)
+function launchGame(gameId) {
+    const game = gamesCatalog.find(g => g.id === gameId);
+    if (game) {
+        alert(`Launching ${game.title}! Next we will build the full-screen iframe modal player.`);
+    }
+}
+
+// Call render on page load
+document.addEventListener('DOMContentLoaded', renderGameGrid);
