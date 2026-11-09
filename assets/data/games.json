@@ -1,18 +1,9 @@
 [
   {
-    "id": "snake",
-    "title": "Neon Snake",
-    "category": "Arcade",
-    "icon": "gamepad-2",
-    "description": "Classic arcade snake with responsive grid controls.",
-    "path": "games/snake/index.html"
-  },
-  {
     "id": "2048",
-    "title": "2048 Orbit",
-    "category": "Puzzle",
+    "title": "2048",
+    "category": "Strategy",
     "icon": "grid",
-    "description": "Combine matching numbers to reach the 2048 tile.",
+    "description": "Fun game of strategy where you try to make the number 2028!",
     "path": "games/2048/index.html"
-  }
-]
+  },
