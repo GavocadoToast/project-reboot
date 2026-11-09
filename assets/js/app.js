@@ -136,3 +136,40 @@ document.getElementById('gameModal')?.addEventListener('click', function(e) {
 
 // Call render on page load
 document.addEventListener('DOMContentLoaded', renderGameGrid);
+
+let currentActiveGame = null;
+
+function launchGame(gameId) {
+    const game = gamesCatalog.find(g => g.id === gameId);
+    if (!game) return;
+
+    currentActiveGame = game;
+
+    const gameModal = document.getElementById('gameModal');
+    const iframe = document.getElementById('gameIframe');
+    const title = document.getElementById('gameModalTitle');
+    const category = document.getElementById('gameModalCategory');
+
+    title.textContent = game.title;
+    category.textContent = game.category;
+    iframe.src = game.path;
+
+    // Reset favorite heart state
+    const favBtn = document.getElementById('favBtn');
+    if (favBtn) favBtn.classList.remove('favorited');
+
+    gameModal.classList.add('active');
+}
+
+function openInNewTab() {
+    if (currentActiveGame && currentActiveGame.path) {
+        window.open(currentActiveGame.path, '_blank');
+    }
+}
+
+function toggleFavorite() {
+    const favBtn = document.getElementById('favBtn');
+    if (favBtn) {
+        favBtn.classList.toggle('favorited');
+    }
+}
