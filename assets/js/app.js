@@ -1,3 +1,23 @@
+// Initialize Lucide Icons
+lucide.createIcons();
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('themeToggle');
+
+// Check saved theme or system preference
+const savedTheme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+});
+
 // Modal Control Logic for Orbit
 function openAuthModal(type) {
     const modal = document.getElementById('authModal');
@@ -23,7 +43,7 @@ function switchForm(type) {
     }
 }
 
-// Close modal if user clicks backdrop
+// Close modal when clicking backdrop
 document.getElementById('authModal').addEventListener('click', function(e) {
     if (e.target === this) {
         closeAuthModal();
