@@ -107,5 +107,27 @@
     </div>
 
     <script src="assets/js/app.js"></script>
+    <!-- Game Player Modal Overlay -->
+<div class="modal-overlay game-modal-overlay" id="gameModal">
+    <div class="game-modal-container">
+        <div class="game-modal-header">
+            <div class="game-modal-title">
+                <span id="gameModalTitle">Game Title</span>
+                <span class="badge" id="gameModalCategory">Arcade</span>
+            </div>
+            <div class="game-modal-actions">
+                <button class="btn btn-ghost btn-icon" onclick="toggleFullscreen()" title="Toggle Fullscreen">
+                    <i data-lucide="maximize-2"></i>
+                </button>
+                <button class="close-btn" onclick="closeGameModal()" title="Close Game">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+        </div>
+        <div class="game-iframe-wrapper">
+            <iframe id="gameIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 </body>
 </html>
