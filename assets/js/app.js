@@ -93,13 +93,46 @@ function renderGameGrid() {
     }
 }
 
-// Placeholder for game launcher (Step 4)
+// Game Modal Player Functions
 function launchGame(gameId) {
     const game = gamesCatalog.find(g => g.id === gameId);
-    if (game) {
-        alert(`Launching ${game.title}! Next we will build the full-screen iframe modal player.`);
+    if (!game) return;
+
+    const gameModal = document.getElementById('gameModal');
+    const iframe = document.getElementById('gameIframe');
+    const title = document.getElementById('gameModalTitle');
+    const category = document.getElementById('gameModalCategory');
+
+    title.textContent = game.title;
+    category.textContent = game.category;
+    iframe.src = game.path;
+
+    gameModal.classList.add('active');
+}
+
+function closeGameModal() {
+    const gameModal = document.getElementById('gameModal');
+    const iframe = document.getElementById('gameIframe');
+
+    gameModal.classList.remove('active');
+    iframe.src = ''; // Clear iframe to stop audio/game loop
+}
+
+function toggleFullscreen() {
+    const iframe = document.getElementById('gameIframe');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
     }
 }
+
+// Close game modal when clicking outside container
+document.getElementById('gameModal')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeGameModal();
+    }
+});
 
 // Call render on page load
 document.addEventListener('DOMContentLoaded', renderGameGrid);
