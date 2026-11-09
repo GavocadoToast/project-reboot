@@ -78,14 +78,19 @@ body {
 }
 
 .logo {
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
 }
 
-.logo .dot {
-    color: var(--text-secondary);
+.logo-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-color, #0071e3); /* Accent color or brand tint */
 }
 
 .nav-links a {
