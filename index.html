@@ -3,32 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Reboot | Free HTML5 Games</title>
+    <title>Orbit | Arcade</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Project <span>Reboot</span></div>
-        <nav>
-            <a href="#">Games</a>
-            <a href="#">Leaderboards</a>
-        </nav>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">orbit<span class="dot">.</span></div>
+            <nav class="nav-links">
+                <a href="#" class="active">Games</a>
+                <a href="#">Leaderboards</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-ghost" onclick="openAuthModal('login')">Log In</button>
+                <button class="btn btn-primary" onclick="openAuthModal('signup')">Sign Up</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Play Instantly. No Ads.</h1>
-            <p>School-ready arcade games built for high scores.</p>
+            <span class="badge">Project Reboot</span>
+            <h1>Play instantly.<br><span class="gradient-text">No distractions.</span></h1>
+            <p>School-ready web games optimized for performance and instant load times.</p>
         </section>
 
         <section class="game-grid">
-            <!-- Game cards will be populated here -->
-            <div class="game-card demo">
-                <div class="card-thumb">🎮</div>
-                <h3>Coming Soon</h3>
-                <p>Flagship Title V1</p>
+            <div class="game-card">
+                <div class="card-image-placeholder">🕹️</div>
+                <div class="card-content">
+                    <span class="game-tag">Flagship</span>
+                    <h3>Title V1</h3>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-image-placeholder">⚡</div>
+                <div class="card-content">
+                    <span class="game-tag">Arcade</span>
+                    <h3>High Score Chaser</h3>
+                    <p>Coming Soon</p>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Auth Modal (Mockup for Week 3) -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeAuthModal()">&times;</button>
+            
+            <!-- Login Form Mockup -->
+            <div id="loginForm" class="auth-form">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Sign in to sync your high scores across devices.</p>
+                <div class="input-group">
+                    <label>Student ID / Username</label>
+                    <input type="text" placeholder="e.g. alex26" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" disabled>
+                </div>
+                <button class="btn btn-primary btn-full" onclick="alert('Auth system connecting in Week 3!')">Log In</button>
+                <p class="switch-form">Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up</a></p>
+            </div>
+
+            <!-- Sign Up Form Mockup -->
+            <div id="signupForm" class="auth-form hidden">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join the Orbit leaderboard competition.</p>
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="Choose a display name" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Grade Level</label>
+                    <input type="text" placeholder="e.g. 10th Grade" disabled>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" disabled>
+                </div>
+                <button class="btn btn-primary btn-full" onclick="alert('Auth system connecting in Week 3!')">Create Account</button>
+                <p class="switch-form">Already have an account? <a href="#" onclick="switchForm('login')">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
