@@ -17,7 +17,6 @@
                 <a href="#">Leaderboards</a>
             </nav>
             <div class="nav-actions">
-                <!-- Theme Toggle Button -->
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i data-lucide="sun" class="icon-sun"></i>
                     <i data-lucide="moon" class="icon-moon"></i>
@@ -37,9 +36,8 @@
             <p>School-ready web games optimized for performance and instant load times.</p>
         </section>
 
-        <section class="game-grid">
-            <!-- Dynamic game cards will load here via assets/js/app.js -->
-        </section>
+        <!-- Dynamic Game Cards Render Here -->
+        <section class="game-grid"></section>
     </main>
 
     <!-- Auth Modal Mockup -->
@@ -48,8 +46,6 @@
             <button class="close-btn" onclick="closeAuthModal()">
                 <i data-lucide="x"></i>
             </button>
-            
-            <!-- Login Form -->
             <div id="loginForm" class="auth-form">
                 <h2>Welcome Back</h2>
                 <p class="subtitle">Sign in to sync your high scores across devices.</p>
@@ -64,8 +60,6 @@
                 <button class="btn btn-primary btn-full" onclick="alert('Auth system connecting in Week 3!')">Log In</button>
                 <p class="switch-form">Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up</a></p>
             </div>
-
-            <!-- Sign Up Form -->
             <div id="signupForm" class="auth-form hidden">
                 <h2>Create Account</h2>
                 <p class="subtitle">Join the Orbit leaderboard competition.</p>
@@ -96,19 +90,15 @@
                     <span class="badge" id="gameModalCategory">Arcade</span>
                 </div>
                 <div class="game-modal-actions">
-                    <!-- Favorite Toggle -->
                     <button class="btn btn-ghost btn-icon" id="favBtn" onclick="toggleFavorite()" title="Favorite Game">
                         <i data-lucide="heart"></i>
                     </button>
-                    <!-- Open in New Tab -->
                     <button class="btn btn-ghost btn-icon" onclick="openInNewTab()" title="Open in New Tab">
                         <i data-lucide="external-link"></i>
                     </button>
-                    <!-- Fullscreen Toggle -->
                     <button class="btn btn-ghost btn-icon" onclick="toggleFullscreen()" title="Toggle Fullscreen">
                         <i data-lucide="maximize-2"></i>
                     </button>
-                    <!-- Close Modal (X Icon) -->
                     <button class="btn btn-ghost btn-icon close-btn" onclick="closeGameModal()" title="Close Game">
                         <i data-lucide="x"></i>
                     </button>
